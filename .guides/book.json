@@ -1,0 +1,17 @@
+{
+ "name": "EnvironmentalResources",
+ "children": [
+  {
+   "title": "Page 1",
+   "id": "83cef6d6-638b-f11e-d644-ed4207d9e41b",
+   "pageId": "83cef6d6-638b-f11e-d644-ed4207d9e41b",
+   "type": "page"
+  },
+  {
+   "title": "Page 2",
+   "id": "d672dab6-17e1-c0c9-1d11-72b8f269c455",
+   "pageId": "d672dab6-17e1-c0c9-1d11-72b8f269c455",
+   "type": "page"
+  }
+ ]
+}
