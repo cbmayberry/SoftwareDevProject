@@ -1,4 +1,28 @@
 <%= form_with(model: org, local: true) do |form| %>
+<form>
+  <div class="container">
+      <h1>New Organization</h1>
+      <div class="row-auto">
+        <label class="visually-hidden" for="autoSizingInput">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name">
+      </div>
+      <div class="row-auto">
+        <label class="visually-hidden" for="autoSizingInput">Location</label>
+        <input type="text" class="form-control" id="location" placeholder="Address">
+      </div>
+      <div class="row-auto">
+        <label class="visually-hidden" for="autoSizingInput">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="Description">
+      </div>
+      <div class="row-auto">
+        <label class="visually-hidden" for="autoSizingInput">Website</label>
+        <input type="url_field" class="form-control" id="website" placeholder="Website">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+    
+    
   <% if org.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(org.errors.count, "error") %> prohibited this organization from being saved:</h2>
@@ -11,6 +35,7 @@
     </div>
   <% end %>
 
+<div class="container.fluid">
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -28,11 +53,11 @@
 
   <div class="field">
     <%= form.label :website %>
-    <%= form.text_field :website %>
+    <%= form.url_field :website %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+</div>
 <% end %>
-
