@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'calendar/show'
   resources :orgs, :events
-  root :to => 'pages#home'
+  root :to => 'welcome#index'
 end
 
 CalendarExample::Application.routes.draw do
