@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_10_19_133509) do
 
   create_table "events", force: :cascade do |t|
-    t.string "event_name"
+    t.text "event_name"
     t.text "event_description"
     t.datetime "date"
     t.integer "org_id"
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2021_10_19_133509) do
   end
 
   create_table "orgs", force: :cascade do |t|
-    t.string "name"
-    t.string "location"
+    t.text "name"
+    t.text "location"
     t.text "description"
-    t.string "website"
+    t.text "website"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

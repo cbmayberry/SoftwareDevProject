@@ -5,10 +5,10 @@ ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3', '~> 1.4.2'
-#Change to postgres as default database bc sqlite3 is not heroku compatible
-gem 'pg', '~> 1.2', '>= 1.2.3'
+# Use pg as the database for Active Record
+#gem 'pg', '~> 1.4.2'
+#Change to postgres as default database bc pg is not heroku compatible
+gem 'pg', '>= 0.18', '< 2.0'
 #Adapter gem
 gem 'postgresql'
 # Use Puma as the app server
