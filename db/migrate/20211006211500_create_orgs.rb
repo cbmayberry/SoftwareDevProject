@@ -1,10 +1,10 @@
 class CreateOrgs < ActiveRecord::Migration[6.0]
   def change
     create_table 'orgs' do |t|
-      t.string 'name'
-      t.string 'location'
+      t.text 'name'
+      t.text 'location'
       t.text 'description'
-      t.string 'website'
+      t.text 'website'
       
 
       # Add fields that let Rails automatically keep track
