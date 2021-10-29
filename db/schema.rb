@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_10_19_133509) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "events", force: :cascade do |t|
     t.text "event_name"
     t.text "event_description"
     t.datetime "date"
-    t.integer "org_id"
+    t.bigint "org_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["org_id"], name: "index_events_on_org_id"

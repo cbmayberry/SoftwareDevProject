@@ -63,4 +63,5 @@ Rails.application.configure do
   # Unblock codio host
   config.hosts << "simple-side-3000.codio.io"
   config.hosts << "parent-lexicon-3000.codio.io"
+  config.hosts << "sparta-pearl-3000.codio.io"
 end
