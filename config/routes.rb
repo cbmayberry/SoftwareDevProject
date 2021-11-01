@@ -10,7 +10,6 @@ CalendarExample::Application.routes.draw do
 end
 
 Rails.application.routes.draw do
-    get 'orgs', to: 'orgs#index'
-    get 'events', to: 'events#index'
-    get "about", to: "about#index"
+    direct(:orgs) { "https://peaceful-inlet-32598.herokuapp.com/orgs" }
+    direct(:events) { "https://peaceful-inlet-32598.herokuapp.com/events" }
 end
