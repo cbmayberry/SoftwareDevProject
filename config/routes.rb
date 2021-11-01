@@ -10,5 +10,7 @@ CalendarExample::Application.routes.draw do
 end
 
 Rails.application.routes.draw do
+    get 'orgs', to: 'orgs#index'
+    get 'events', to: 'events#index'
     get "about", to: "about#index"
 end
