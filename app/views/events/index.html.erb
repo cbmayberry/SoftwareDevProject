@@ -24,7 +24,7 @@
         <% @events.each do |event| %>
           <tr>
             <td><%= event.event_name %></td>
-            <td><%= event.org.name %></td>
+            <td><%= link_to event.org.name, event.org.website, target: '_blank' %></td>
             <td><%= event.event_description %></td>
             <td><%= event.date.strftime("%b %d, %Y") %></td>
             <td>
