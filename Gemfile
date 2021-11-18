@@ -9,8 +9,8 @@ gem 'rails', '~> 6.0.0'
 #gem 'pg', '~> 1.1'
 #Change to postgres as default database bc pg is not heroku compatible
 #Adapter gem
-gem 'postgresql'
-gem 'psql'
+#gem 'postgresql'
+#gem 'psql'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
