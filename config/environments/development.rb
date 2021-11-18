@@ -64,4 +64,6 @@ Rails.application.configure do
   config.hosts << "simple-side-3000.codio.io"
   config.hosts << "parent-lexicon-3000.codio.io"
   config.hosts << "sparta-pearl-3000.codio.io"
+  config.hosts << "rocket-atlanta-3000.codio.io"
+    
 end
