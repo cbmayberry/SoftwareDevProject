@@ -1,5 +1,28 @@
 <%= form_with(model: event, local: true) do |form| %>
-  <% if event.errors.any? %>
+<form>
+  <div class="container">
+    <div class="field">
+      <%= form.label :event_name, "Event Name", class: "visually-hidden" %>
+      <%= form.text_field :event_name, class: "form-control", placeholder: "Name"%>
+    </div>
+    <div class="field">
+      <%= form.label :event_description, "Event Description", class: "visually-hidden" %>
+      <%= form.text_field :event_description, class: "form-control", placeholder: "Description" %>
+    </div>
+    <div class="field">
+      <%= form.label :date, "Date", class: "visually-hidden" %>
+      <%= form.datetime_local_field :date, class: "form-control", placeholder: "Date" %>
+    </div>
+    <div class="field">
+      <%= form.label :org, "Org", class: "visually-hidden" %>
+      <%= form.collection_select :org_id, Org.all, :id, :name, {:include_blank => false}, {class: "form-select"} %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  </div>
+
+    <% if event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
@@ -11,28 +34,4 @@
     </div>
   <% end %>
 
-
-  <div class="field">
-    <%= form.label :event_name %>
-    <%= form.text_field :event_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :event_description %>
-    <%= form.text_field :event_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_local_field :date %>
-  </div>
-
-  <div class="field"> 
-    <%= form.label :org %>  
-    <%= form.collection_select(:org, Org.all, :id, :name) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

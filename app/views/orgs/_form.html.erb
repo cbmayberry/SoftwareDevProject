@@ -1,26 +1,27 @@
 <%= form_with(model: org, local: true) do |form| %>
 <form>
   <div class="container">
-      <div class="row-auto">
-        <label class="visually-hidden" for="autoSizingInput">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Name">
-      </div>
-      <div class="row-auto">
-        <label class="visually-hidden" for="autoSizingInput">Location</label>
-        <input type="text" class="form-control" id="location" placeholder="Address">
-      </div>
-      <div class="row-auto">
-        <label class="visually-hidden" for="autoSizingInput">Description</label>
-        <input type="text" class="form-control" id="description" placeholder="Description">
-      </div>
-      <div class="row-auto">
-        <label class="visually-hidden" for="autoSizingInput">Website</label>
-        <input type="url_field" class="form-control" id="website" placeholder="Website">
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="field">
+      <%= form.label :name, "Name", class: "visually-hidden" %>
+      <%= form.text_field :name, class: "form-control", placeholder: "Name"%>
     </div>
-
-    
+    <div class="field">
+      <%= form.label :location, "Location", class: "visually-hidden" %>
+      <%= form.text_field :location, class: "form-control", placeholder: "Address" %>
+    </div>
+    <div class="field">
+      <%= form.label :description, "Description", class: "visually-hidden" %>
+      <%= form.text_field :description, class: "form-control", placeholder: "Description" %>
+    </div>
+    <div class="field">
+      <%= form.label :website, "Website", class: "visually-hidden" %>
+      <%= form.url_field :website, class: "form-control", placeholder: "Website" %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  </div>
+   
   <% if org.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(org.errors.count, "error") %> prohibited this organization from being saved:</h2>
@@ -33,29 +34,4 @@
     </div>
   <% end %>
 
-<div class="container.fluid">
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :website %>
-    <%= form.url_field :website %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-</div>
 <% end %>
