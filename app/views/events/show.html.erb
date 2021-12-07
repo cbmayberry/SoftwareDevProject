@@ -1,20 +1,25 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+  <div class="col text-center">
+    <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-outline-secondary btn-sm" %>
+  </div>
+</div>
+
 <div class="card text-center">
     <div class="card-body">
-    <h3 class="card-title"><strong> <%= @event.event_name %> </strong></h3>
-    <p class="card-text"> <strong> Description: </strong> <%= @event.event_description %> </p>
-    <p class="card-text"> <strong> Date: </strong> <%= @event.date %> </p>
-    <p class="card-text"> <strong> Organization: </strong> <%= link_to @event.org.name, @event.org.website, target: '_blank' %> </p>    
-</div>
+    <h3 class="card-title">
+      <%= @event.event_name %>
+      <small class="text-muted"> <%= link_to @event.org.name, org, method: :show%> </small>
+    </h3>
+      <p class="card-text"> <%= @event.date %> </p>
+      <p class="card-text"> <u>Description:</u> <%= @event.event_description %> </p>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col">
-       <p class="text-center"><%= link_to 'Edit', edit_event_path(@event), class: "btn btn-secondary" %></p> 
-    </div>
-    <div class="col">
-        <p class="text-center"><%= link_to 'Back', events_path, class: "btn btn-secondary" %></p> 
+    <div class="col text-center">
+        <%= link_to 'Back', events_path, class: "btn btn-secondary" %>
     </div>
 </div>
  
