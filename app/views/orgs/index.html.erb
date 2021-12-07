@@ -4,7 +4,7 @@
     <div class="col-sm-3"></div>
     <div class="col-sm-3"></div>
     <div class="col-sm-3"></div>
-    <div class="col-sm-3"><%= link_to 'New Organization', new_org_path, class: "btn btn-primary" %></div>
+    <div class="col-sm-3"><%= link_to 'New Organization', new_org_path, class: "btn btn-outline-secondary" %></div>
 </div>
 
   <div class="container">
@@ -21,7 +21,7 @@
       <tbody>
         <% @orgs.each do |org| %>
           <tr>
-            <td><%=link_to 'Info', org, method: :show%></td>
+            <td><%=link_to org.name, org, method: :show, target: '_blank'%></td>
             <td><%= org.location %></td>
             <td><%= org.description %></td>
             <td><div style="width:100%; height: 100%">

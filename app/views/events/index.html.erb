@@ -4,36 +4,34 @@
     <div class="col-sm-3"></div>
     <div class="col-sm-3"></div>
     <div class="col-sm-3"></div>
-    <div class="col-sm-3"><%= link_to 'New Event', new_event_path, class: "btn btn-primary" %></div>
+    <div class="col-sm-3"><%= link_to 'New Event', new_event_path, class: "btn btn-outline-secondary" %></div>
 </div>
 
 <div class="container">
-  <div class="table-wrapper">
-    <div class="table-title"> <h1>Events</h1> </div>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Organization</th>
-          <th>Description</th>
-          <th>Date</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @events.each do |event| %>
-          <tr>
-            <td><%= event.event_name %></td>
-            <td><%= link_to event.org.name, event.org.website, target: '_blank' %></td>
-            <td><%= event.event_description %></td>
-            <td><%= event.date.strftime("%b %d, %Y") %></td>
-            <td><div style="width:100%; height: 100%">
-              <%= link_to 'Info', event, method: :show, class: "btn btn-outline-secondary" %>
-              <%= link_to 'Edit', edit_event_path(event), class: "btn btn-outline-secondary" %>
-            </div></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+  <div class="table-title"> <h1>Events</h1> </div>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Organization</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.event_name %></td>
+        <td><%= link_to event.org.name, event.org, method: :show, target: '_blank' %></td>
+        <td><%= event.event_description %></td>
+        <td><%= event.date.strftime("%b %d, %Y") %></td>
+        <td><div style="width:100%; height: 100%">
+          <%= link_to 'Info', event, method: :show, class: "btn btn-outline-secondary" %>
+          <%= link_to 'Edit', edit_event_path(event), class: "btn btn-outline-secondary" %>
+        </div></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
