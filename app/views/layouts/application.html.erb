@@ -33,12 +33,12 @@
           <li class="nav-item">
             <a class="nav-link" href="/events">Events</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/sign_in">Log In</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/sign_up">Sign Up</a>
-          </li>
+          <% if logged_in? %>
+            <li class="nav-item"><%= link_to "Log out", logout_path, method: "delete", :class => "nav-link" %></li>
+          <% else %>
+            <li class="nav-item"><%= link_to "Log in", sign_in_path, :class => "nav-link" %></li>
+            <li class="nav-item"><%= link_to "Sign up", sign_up_path, :class => "nav-link" %></li>
+          <% end %>
         </ul>
       </div>
     </nav>
