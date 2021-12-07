@@ -27,10 +27,10 @@
             <td><%= link_to event.org.name, event.org.website, target: '_blank' %></td>
             <td><%= event.event_description %></td>
             <td><%= event.date.strftime("%b %d, %Y") %></td>
-            <td>
-              <%= link_to 'Edit', edit_event_path(event), class: "btn btn-warning" %>
-              <%= button_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-              </td>
+            <td><div style="width:100%; height: 100%">
+              <%= link_to 'Info', event, method: :show, class: "btn btn-outline-secondary" %>
+              <%= link_to 'Edit', edit_event_path(event), class: "btn btn-outline-secondary" %>
+            </div></td>
           </tr>
         <% end %>
       </tbody>
