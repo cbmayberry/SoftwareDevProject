@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <module type="RUBY_MODULE" version="4">
   <component name="FacetManager">
     <facet type="RailsFacetType" name="Ruby on Rails">
@@ -191,5 +192,13 @@
     <option name="myRootTask">
       <RakeTaskImpl id="rake" />
     </option>
+=======
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+>>>>>>> main
   </component>
 </module>
