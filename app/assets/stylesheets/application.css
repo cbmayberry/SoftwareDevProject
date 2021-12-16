@@ -1,0 +1,17 @@
+/*
+*= require material_icons
+*/
+
+i.weblink {
+    font-size: 24px;
+    /* Rules for using icons as black on a light background. */
+    color: rgba(0, 0, 0, 0.54);
+    /*.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }*/
+
+/*    !* Rules for using icons as white on a dark background. *!
+    .md-light { color: rgba(255, 255, 255, 1); }
+    .md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }*/
+
+    /*set color of icons*/
+    color: #FB8C00;
+}
