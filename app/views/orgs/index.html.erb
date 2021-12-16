@@ -25,9 +25,11 @@
             <td><%= org.location %></td>
             <td><%= org.description %></td>
             <td><div style="width:100%; height: 100%">
+              <% if logged_in? %>
                 <%= link_to 'Website', org.website,target: '_blank', class: "btn btn-outline-secondary" %>
-                <%= link_to 'Edit', edit_org_path(org), class: "btn btn-outline-secondary" %> 
-                </div></td>
+              <% end %>
+              <%= link_to 'Edit', edit_org_path(org), class: "btn btn-outline-secondary" %> 
+            </div></td>
               
 
           </tr>

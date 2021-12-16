@@ -31,4 +31,14 @@ seed_list.each do |name, location, description, website, event_name, event_descr
     seedEvent = Event.create(event_name: event_name, event_description: event_description, date: date, org: seedOrg)
 end 
 
+# Seed the DB with users.
 
+user_seed_list = [
+  ['ocanosa@tulane.edu', 'ocanosa'],
+  ['cmayberry@tulane.edu', 'cmayberry'],
+  ['srecile@tulane.edu', 'srecile']
+]
+
+user_seed_list.each do |email, password|
+  seedUser = User.create(email: email, password: password)
+end
