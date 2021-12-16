@@ -3,13 +3,6 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    if params[:search]
-      search_events
-    elsif params[:sort]
-      @events = Event.order(params[:sort])
-    else
-      @Events = Event.all
-    end
   end
 
   def search_events
