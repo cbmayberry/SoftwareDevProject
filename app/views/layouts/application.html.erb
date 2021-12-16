@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang = "en-US">
   <head>
-    <title>Recycling Programs</title>
+    <title>Recycling Program</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -16,21 +16,33 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #004225;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">Recycling Program</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" aria-current="page" href="/">
+          <strong>Recycling Program</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="nav navbar-nav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/orgs">Organizations</a>
+              <a class="nav-link" href="/orgs">Organizations</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/events">Events</a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <% if logged_in? %>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <% if logged_in? %>
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="/logout">Login</a></li>
+
+                  <li><a class="dropdown-item" href="/login">Login</a></li>
+                <li><a class="dropdown-item" href="/register">Register</a></li>
+
+              <% if logged_in? %>
               <li class="nav-item">
                 <a class="nav-link" href="/users">Profile</a>
               </li>
