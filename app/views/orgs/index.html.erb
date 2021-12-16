@@ -24,13 +24,18 @@
             <td><%=link_to org.name, org, method: :show%></td>
             <td><%= org.location %></td>
             <td><%= org.description %></td>
-            <td><div style="width:100%; height: 100%">
+            <td>
+              <button type="button" class="btn btn-outline-secondary">
+                <i class="material-icons-outlined">open_in_new</i>
+                <%= link_to '', org.website, target: '_blank', :method => :get %>
+              </button>
               <% if logged_in? %>
-                <%= link_to 'Website', org.website,target: '_blank', class: "btn btn-outline-secondary" %>
+                <button type="button" class="btn btn-outline-secondary">
+                  <i class="material-icons-outlined">edit</i>
+                  <%= link_to '', edit_org_path(org) %>
+                </button>
               <% end %>
-              <%= link_to(image_tag(src="/assets/website_icon.jpeg",  class="image-responsive"), org.website, target: '_blank', :method => :get)%>
-              <%= link_to 'Edit', edit_org_path(org), class: "btn btn-outline-secondary" %>
-            </div></td>
+            </td>
           </tr>
         <% end %>
       </tbody>
