@@ -24,7 +24,7 @@ seed_list = [
     ['Friends of West End', '141 W Robert E Lee Blvd', 'Rebuild parks and other green spaces at West End', 'https://www.facebook.com/FriendsofWestEnd/', 'Sunset Fest', 'Raise awareness for park conservation in the West End', '05-Nov-2021'],
     ['Humane Society of Louisiana', '2321 St Claude Avenue', 'Focus on cruelty investigation and pet adoptions', 'https://humanela.org/', 'Paw Party', 'Help care for and feed pets at the animal shelter', '12-Dec-2021'],
     ['Providence Community Housing', '2117 Ursulines Avenue', 'Help address the critical need for affordable and supportive housing in Louisiana', 'https://providencecommunityhousing.org/', 'Senior Housing Drive', 'Collect resources to rebuild homes for elderly people', '23-Nov-2021']
-
+]
 
 seed_list.each do |name, location, description, website, event_name, event_description, date|
     seedOrg = Org.create(name: name, location: location, description: description, website: website)
