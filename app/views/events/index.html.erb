@@ -10,13 +10,20 @@
 <div class="container">
   <div class="table-wrapper">
     <div class="table-title"> <h1>Events</h1> </div>
+    <div class="table-search">
+      <%= form_tag(events_path, method: :get) do %>
+      <p> Search for an event </p>
+      <%= text_field_tag(:search, params[:search]) %>
+      <%= submit_tag ("Search") %>
+      <% end %>  
+    </div>
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Name</th>
+          <th><%= link_to "Name", :sort => "event_name"%></th>
           <th>Organization</th>
           <th>Description</th>
-          <th>Date</th>
+          <th><%= link_to "Date", :sort => "date"%></th>
           <th>Actions</th>
         </tr>
       </thead>

@@ -3,11 +3,25 @@ class EventsController < ApplicationController
 
   # GET /events or /events.json
   def index
-    @events = Event.all
+    if params[:search]
+      search_events
+    end
+    if params[:sort]
+      @events = Event.order(params[:sort])
+    else
+      @events = Event.all
+    end
   end
 
   # GET /events/1 or /events/1.json
   def show
+    @event = Event.find(params[:id])
+  end
+    
+  def search_events
+    if @event = Event.all.find{|event| event.event_name.include?(params[:search])}
+      redirect_to event_path(@event)
+    end
   end
 
   # GET /events/new
