@@ -5,8 +5,11 @@ class EventsController < ApplicationController
   def index
     if params[:search]
       search_events
+    if params[:sort]
+      @events = Event.order(params[:sort])
+    else
+      @Events = Event.all
     end
-    @events = Event.order(params[:sort])
   end
 
   def search_events
