@@ -9,6 +9,13 @@
 
   <div class="container">
     <div class="table-title"> <h1>Community Organizations</h1> </div>
+    <div class="table-search">
+      <%= form_tag(orgs_path, method: :get) do %>
+      <p> Search for an organization </p>
+      <%= text_field_tag(:search, params[:search]) %>
+      <%= submit_tag ("Search") %>
+      <% end %>  
+    </div>
     <table class="table table-bordered">
       <thead>
         <tr>

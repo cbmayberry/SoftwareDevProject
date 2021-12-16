@@ -17,7 +17,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
   end
-
+    
   def search_events
     if @event = Event.all.find{|event| event.event_name.include?(params[:search])}
       redirect_to event_path(@event)

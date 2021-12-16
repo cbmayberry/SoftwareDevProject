@@ -3,11 +3,25 @@ class OrgsController < ApplicationController
 
   # GET /orgs or /orgs.json
   def index
-    @orgs = Org.order(params[:sort])
+    if params[:search]
+      search_orgs
+    end
+    if params[:sort]
+      @orgs = Org.order(params[:sort])
+    else
+      @orgs = Org.all
+    end
   end
 
   # GET /orgs/1 or /orgs/1.json
   def show
+    @org = Org.find(params[:id])
+  end
+    
+  def search_orgs
+    if @org = Org.all.find{|org| org.name.include?(params[:search])}
+      redirect_to org_path(@org)
+    end
   end
 
   # GET /orgs/new
