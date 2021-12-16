@@ -1,6 +1,6 @@
 class OrgsController < ApplicationController
   before_action :set_org, only: %i[ show edit update destroy ]
-    
+
   # GET /orgs or /orgs.json
   def index
     @orgs = Org.order(params[:sort])
