@@ -3,7 +3,7 @@ class OrgsController < ApplicationController
 
   # GET /orgs or /orgs.json
   def index
-    @orgs = Org.all
+    @orgs = Org.order(params[:sort])
   end
 
   # GET /orgs/1 or /orgs/1.json
