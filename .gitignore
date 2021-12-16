@@ -34,8 +34,4 @@
 yarn-debug.log*
 .yarn-integrity
 
-/.idea/*
-.ruby-version
-.codio
-.settings
-
+/.idea
