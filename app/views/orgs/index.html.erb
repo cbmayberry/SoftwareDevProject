@@ -28,10 +28,9 @@
               <% if logged_in? %>
                 <%= link_to 'Website', org.website,target: '_blank', class: "btn btn-outline-secondary" %>
               <% end %>
-              <%= link_to 'Edit', edit_org_path(org), class: "btn btn-outline-secondary" %> 
+              <%= link_to(image_tag(src="/assets/website_icon.jpeg",  class="image-responsive"), org.website, target: '_blank', :method => :get)%>
+              <%= link_to 'Edit', edit_org_path(org), class: "btn btn-outline-secondary" %>
             </div></td>
-              
-
           </tr>
         <% end %>
       </tbody>

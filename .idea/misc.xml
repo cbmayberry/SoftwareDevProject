@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="ruby-3.0.3-p157" project-jdk-type="RUBY_SDK">
+=======
+  <component name="ProjectRootManager">
+>>>>>>> main
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
