@@ -4,12 +4,6 @@ class Calendar < Struct.new(:view, :date, :callback)
 
     delegate :content_tag, to: :view
 
-    def table
-      content_tag :table, class: "calendar table table-bordered table-striped" do
-        header + week_rows
-      end
-    end
-
     def header
       content_tag :tr do
         HEADER.map { |day| content_tag :th, day }.join.html_safe

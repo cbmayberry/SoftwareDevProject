@@ -5,16 +5,15 @@
     <h3 class="card-title"><strong> <%= @event.event_name %> </strong></h3>
     <p class="card-text"> <strong> Description: </strong> <%= @event.event_description %> </p>
     <p class="card-text"> <strong> Date: </strong> <%= @event.date %> </p>
-    <p class="card-text"> <strong> Organization: </strong> <%= link_to @event.org.name, @event.org.website, target: '_blank' %> </p>    
+    <p class="card-text"> <strong> Organization: </strong> <%= link_to @event.org.name, @event.org.website, target: '_blank' %> </p>
 </div>
 </div>
 
 <div class="row">
     <div class="col">
-       <p class="text-center"><%= link_to 'Edit', edit_event_path(@event), class: "btn btn-secondary" %></p> 
+       <p class="text-center"><%= link_to 'Edit', edit_event_path(@event), class: "btn btn-secondary" %></p>
     </div>
     <div class="col">
-        <p class="text-center"><%= link_to 'Back', events_path, class: "btn btn-secondary" %></p> 
+        <p class="text-center"><%= link_to 'Back', events_path, class: "btn btn-secondary" %></p>
     </div>
 </div>
- 

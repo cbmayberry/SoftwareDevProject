@@ -5,18 +5,18 @@
     <h3 class="card-title"><strong> <%= @org.name %> </strong></h3>
     <p class="card-text"> <strong> Location: </strong> <%= @org.location %> </p>
     <p class="card-text"> <strong> Description: </strong> <%= @org.description %> </p>
-    <p class="card-text"> <strong> Website: </strong> <%= link_to @org.website, @org.website, target: '_blank' %> </p>    
+    <p class="card-text"> <strong> Website: </strong> <%= link_to @org.website, @org.website, target: '_blank' %> </p>
   </div>
 </div>
 
 <div class="row">
     <div class="col">
-      <p class="text-center"><%= link_to 'Edit', edit_org_path(@org), class: "btn btn-secondary" %></p> 
+      <p class="text-center"><%= link_to 'Edit', edit_org_path(@org), class: "btn btn-secondary" %></p>
     </div>
     <div class="col text-center">
       <%= button_to 'Delete', @org, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
     </div>
     <div class="col">
-      <p class="text-center"><%= link_to 'Back', orgs_path, class: "btn btn-secondary" %></p> 
-    </div>  
+      <p class="text-center"><%= link_to 'Back', orgs_path, class: "btn btn-secondary" %></p>
+    </div>
 </div>
