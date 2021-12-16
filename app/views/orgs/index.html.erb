@@ -26,13 +26,11 @@
             <td><%= org.description %></td>
             <td>
               <button type="button" class="btn btn-outline-secondary">
-                <i class="material-icons weblink">open_in_new</i>
-                <%= link_to nil, org.website, target: '_blank', :method => :get %>
+                <%= link_to ('<i class="material-icons weblink">open_in_new</i>').html_safe, org.website, target: '_blank', :method => :get %>
               </button>
               <% if logged_in? %>
                 <button type="button" class="btn btn-outline-secondary">
-                  <i class="material-icons-outlined">edit</i>
-                  <%= link_to '', edit_org_path(org) %>
+                  <%= link_to ('<i class="material-icons weblink">edit</i>').html_safe, edit_org_path(org) %>
                 </button>
               <% end %>
             </td>
