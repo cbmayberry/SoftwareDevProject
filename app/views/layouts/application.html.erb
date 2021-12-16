@@ -33,11 +33,11 @@
       </ul>
       <ul class="navbar-nav ms-auto">
         <% if logged_in? %>
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li><a class="dropdown-item" href="/logout">Log Out</a></li>
-        <% else %>
-          <li><a class="dropdown-item" href="/login">Log In</a></li>
-          <li><a class="dropdown-item" href="/register">Register</a></li>
+          <li><a class="nav-item" href="#">Profile</a></li>
+          <li class="nav-item"><%= link_to "Log out", logout_path, method: "delete", :class => "nav-link" %></li>
+      <% else %>
+          <li class="nav-item"><%= link_to "Log in", sign_in_path, :class => "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Sign up", sign_up_path, :class => "nav-link" %></li>
         <% end %>
       </ul>
     </div>
