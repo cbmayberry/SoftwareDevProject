@@ -39,6 +39,9 @@ gem 'material_icons'
 #Session and account manager gem https://github.com/heartcombo/devise
 gem 'devise'
 
+#get images for orgs from link previews
+gem 'link_thumbnailer'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
