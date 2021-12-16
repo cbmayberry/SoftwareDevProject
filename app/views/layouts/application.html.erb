@@ -7,6 +7,7 @@
   <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_pack_tag "application.css" %>
   <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet">
@@ -34,7 +35,7 @@
       </ul>
       <ul class="navbar-nav ms-auto">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" role="button" data-bs-toggle="dropdown">
+          <a class="dropdown-toggle" role="button" data-bs-toggle="dropdown">
             Account <b class="caret"></b>
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
