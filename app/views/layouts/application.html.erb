@@ -1,90 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Recycling Programs</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang = "en-US">
+<head>
+  <title>Recycling Program</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag "application.css" %>
+  <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+  <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <%= stylesheet_pack_tag "application.css" %>
-    <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
-    <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
-    <%= csrf_meta_tags %>
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  </head>
-
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Recycling Program</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/orgs">Organizations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/events">Events</a>
-          </li>
-          <% if logged_in? %>
-            <li class="nav-item"><%= link_to "Log out", logout_path, method: "delete", :class => "nav-link" %></li>
-          <% else %>
-            <li class="nav-item"><%= link_to "Log in", sign_in_path, :class => "nav-link" %></li>
-            <li class="nav-item"><%= link_to "Sign up", sign_up_path, :class => "nav-link" %></li>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #004225;">
+  <div class="container-fluid">
+    <a class="navbar-brand" aria-current="page" href="/">
+      <strong>Recycling Program</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/orgs">Organizations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events">Events</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <% if logged_in? %>
+          <li class="nav-item"><%= link_to "Log out", logout_path, method: "delete", :class => "nav-link" %></li>
+      <% else %>
+          <li class="nav-item"><%= link_to "Log in", sign_in_path, :class => "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Sign up", sign_up_path, :class => "nav-link" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
 <%= yield %>
 
-<div class="card-group">
-    <div class="col">
-          <div class="card text-center">
-          <div class="card-header">
-              <%= link_to 'Join', new_org_path, class: "btn btn-info" %>
-          </div>
-            <div class="card-text">
-            <p>If you are part of an organization, register here to post informaton about services or events</p>
-            <img src="/join.jpg" class="card-img-bottom" alt="Green businesses graphic">
-
-              </div>
-        </div>
+<div class="row">
+  <div class="col">
+    <div class="card text-center">
+      <img src="/join.jpg" class="card-img" alt="">
+      <div class="card-img-overlay">
+        <p class="card-text"><%=link_to 'Register A New Organization', new_org_path, class: "btn btn-success btn-sm"%></p>
+      </div>
     </div>
-
-    <div class="col">
-        <div class="card text-center">
-          <div class="card-header">        
-                        <%= link_to 'Explore', events_path, class: "btn btn-info" %>
-          </div>
-          <div class="card-text">
-              <p>Check out our calendar of upcoming events and important dates</p>
-              </div>
-        <img src="/explore.jpg" class="card-img-bottom" alt="calendar icon">
-        </div>
-            </div>
-
-    <div class="col">
-        <div class="card text-center">
-          <div class="card-header">        
-                        <%= link_to 'Volunteer', sign_up_path, class: "btn btn-info" %>
-          </div>
-          <div class="card-text">
-              <p>Sign up to receive updates on volunteer opportunities</p>
-            </div>
-        <img src="/volunteer.jpg" class="card-img-bottom" alt="Volunteer raised hands graphic">
-        </div>
-            </div> 
   </div>
 
+  <div class="col">
+    <div class="card text-center">
+      <img src="/explore.jpg" class="card-img" alt="">
+      <div class="card-img-overlay">
+        <p class="card-text"><%=link_to 'Explore Calendar of Events', events_path, class: "btn btn-success btn-sm"%></p>
+      </div>
+    </div>
+  </div>
 
-      
-
-  </body>
+  <div class="col">
+    <div class="card text-center">
+      <img src="/volunteer.jpg" class="card-img" alt="">
+      <div class="card-img-overlay">
+        <p class="card-text"><%=link_to 'Register as a Volunteer', sign_up_path, class: "btn btn-success btn-sm" %></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </html>

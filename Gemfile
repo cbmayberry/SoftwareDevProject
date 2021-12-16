@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+#git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
@@ -9,8 +9,8 @@ gem 'rails', '~> 6.0.0'
 #gem 'pg', '~> 1.1'
 #Change to postgres as default database bc pg is not heroku compatible
 #Adapter gem
-gem 'postgresql'
-gem 'psql'
+#gem 'postgresql'
+#gem 'psql'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -31,6 +31,16 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+#Gem for using Google icons https://github.com/Angelmmiguel/material_icons
+# https://fonts.google.com/icons?selected=Material+Icons
+gem 'material_icons'
+
+#Session and account manager gem https://github.com/heartcombo/devise
+gem 'devise'
+
+#get images for orgs from link previews
+gem 'link_thumbnailer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

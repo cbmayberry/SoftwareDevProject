@@ -5,4 +5,6 @@ class Event < ActiveRecord::Base
     #event only valid if associated w an organization
     validates :org, :presence => true
 
+
+
 end
