@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+This README documents the steps necessary to get Recycle NOLA up and running.
 
 * Ruby version
+2.6.6
 
-* System dependencies
-
-* Configuration
+* Rails version
+6.0.4.4
 
 * Database creation
+Run rails db:create and db:migrate in order to create the database.
 
 * Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+Run rails db:seed to populate the database with dummy organizations, events, and users.
 
 * Deployment instructions
-
-* ...
+Commit to main branch on SoftwareDevProject which automatically updates the Heroku app https://peaceful-inlet-32598.herokuapp.com/
